@@ -1,11 +1,11 @@
 // import our burgers model
-const burgers = require("../models/burgers");
+const db = require("../models");
 
 module.exports = app => {
 
   // GET all burgers
   app.get("/api/burgers", function(req, res) {
-    burgers.findAll()
+    db.Burger.findAll({})
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
@@ -17,7 +17,10 @@ module.exports = app => {
   app.post("/api/burgers", function(req, res) {
     // pass req.body into create method 
     // req.body => {name: "catty cat"}
-    burgers.create(req.body)
+    db.Burger.create({
+      name: req.body.name,
+      eaten: req.body.eaten
+    })
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
@@ -28,7 +31,11 @@ module.exports = app => {
 
   // get a burger by its id
   app.get("/api/burgers/:id", function(req, res) {
-    burgers.findById(req.params.id)
+    db.Burger.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
@@ -39,7 +46,11 @@ module.exports = app => {
   // PUT/update a burger's eaten to true/false by id
   app.put("/api/burgers/:id", function(req, res) {
     // req.body => {sleepy: true} || {sleepy : false}
-    burgers.update(req.body.eaten, req.params.id)
+    db.Burger.update({
+      where: {
+        id: req.body.id
+      }
+    })
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
@@ -49,7 +60,11 @@ module.exports = app => {
 
   // DELETE a burger by its id
   app.delete("/api/burgers/:id", function(req, res) {
-    burgers.remove(req.params.id)
+    db.Burger.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
