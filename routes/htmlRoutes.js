@@ -1,12 +1,17 @@
-// import our burgers model
-const path = require("path")
-// const burgers = require("../models/burgers");
+const db = require("../models");
 
-// export our route definitions as a function
+
 module.exports = (app) => {
-
-  app.get("/", function(req, res) {
-
-    res.sendFile(path.join(__dirname, "/public/burgers.html"))
+  app.get("/", function (req, res) {
+    db.Burger.findAll({})
+      .then(dbBurgerData => {
+        res.render("index", {
+          burgerData: dbBurgerData
+        })
+      })
+      .catch(err => {
+        console.log(err);
+        res.json(err);
       });
+  });
 }
