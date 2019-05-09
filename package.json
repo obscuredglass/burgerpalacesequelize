@@ -20,6 +20,7 @@
   "homepage": "https://github.com/obscuredglass/burgerpalacesequelize#readme",
   "dependencies": {
     "dotenv": "^8.0.0",
+    "express": "^4.16.4",
     "mysql2": "^1.6.5",
     "path": "^0.12.7",
     "sequelize": "^5.8.5"
