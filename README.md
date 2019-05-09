@@ -6,9 +6,8 @@
 3. Node.js
 4. MySQL
 5. Heroku
-6. Express
-7. Express-Handlebars
+6. Sequelize
 
-This app uses all these different pieces of software so you can order, update, and delete a burger from the menu. It was really interesting to see how all these different pieces of technology flow together to make a seemingly simple website.
+This app uses all these different pieces of software so you can order, update, and delete a burger from the menu. It was really interesting to see how all these different pieces of technology flow together to make a seemingly simple website. This is different than the other burger app because it now has the use of Sequelize, which streamlines the use of MySQL.
 
 [link to to my project on Heroku!](https://burgerpalace.herokuapp.com)
