@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/obscuredglass/burgerpalacesequelize/issues"
   },
-  "homepage": "https://github.com/obscuredglass/burgerpalacesequelize#readme"
+  "homepage": "https://github.com/obscuredglass/burgerpalacesequelize#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.5"
+  }
 }
