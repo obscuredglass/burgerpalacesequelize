@@ -1,0 +1,76 @@
+<div class="jumbotron jumbotron-fluid bg-dark text-light p-5">
+  <h1>Burger App!</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 col-md-3">
+      <form id="burger-form">
+        <input class="form-control" id="name-input" placeholder="Burger's Name" />
+        <button class="btn btn-success btn-block" type="submit">
+          Add A Burger Order!
+        </button>
+      </form>
+    </div>
+
+    <div class="col-12 col-md-9">
+
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          <h2>Someone better eat these burgers or I will!</h2>
+          <ul class="list-group">
+
+          {{#each burgerData}}
+
+            {{#unless eaten}}
+            <li class="list-group-item d-flex">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-eaten="false" class="btn btn-sm btn-info update-burger">
+                  Order up!
+                </button>
+
+
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger">
+                  Delete an Order
+                </button>
+              </span>
+            </li>
+            {{/unless}}
+          {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <h2>Burgers that have been eaten</h2>
+          <ul class="list-group">
+
+            {{#each burgerData}}
+
+            {{#if eaten}}
+            <li class="list-group-item d-flex">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-eaten="false" class="btn btn-sm btn-info update-burger">
+                  Click me
+                </button>
+
+
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger">
+                  Delete burger
+                </button>
+              </span>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/js/burgers.js"></script>

@@ -1,0 +1,21 @@
+{
+  "name": "burgerpalacesequelize",
+  "version": "1.0.0",
+  "description": "## Technologies used 1. HTML 2. JavaScript 3. Node.js 4. MySQL 5. Heroku 6. Express 7. Express-Handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obscuredglass/burgerpalacesequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obscuredglass/burgerpalacesequelize/issues"
+  },
+  "homepage": "https://github.com/obscuredglass/burgerpalacesequelize#readme"
+}
