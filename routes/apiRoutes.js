@@ -15,8 +15,7 @@ module.exports = app => {
 
   // create/POST a new burger
   app.post("/api/burgers", function(req, res) {
-    // pass req.body into create method 
-    // req.body => {name: "catty cat"}
+  
     db.Burger.create({
       name: req.body.name,
       eaten: req.body.eaten
