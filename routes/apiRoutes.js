@@ -44,10 +44,15 @@ module.exports = app => {
 
   // PUT/update a burger's eaten to true/false by id
   app.put("/api/burgers/:id", function(req, res) {
-    // req.body => {sleepy: true} || {sleepy : false}
+    console.log(req.body);
+    console.log(req.params);
+    // req.body => {eaten: true} || {eaten : false}
     db.Burger.update({
+      eaten: req.body.eaten
+    },
+      {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     })
       .then(dbBurgerData => res.json(dbBurgerData))

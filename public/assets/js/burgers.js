@@ -24,8 +24,9 @@ $(document).ready(function() {
   });
 
   // update burger
-  $(".update-burger").on("click", function() {
-    // read back burger's id and sleepy status
+  $(".update-burger").on("click", function(e) {
+    e.preventDefault();
+    // read back burger's id and eaten status
     const burgerId = $(this).attr("data-id");
     const eaten = $(this).attr("data-eaten")
 
@@ -40,7 +41,8 @@ $(document).ready(function() {
     .catch(err => console.log(err));
   });
 
-  $(".delete-burger").on("click", function() {
+  $(".delete-burger").on("click", function(e) {
+    e.preventDefault();
     // get burger's id
     const burgerId = $(this).attr("data-id");
 
